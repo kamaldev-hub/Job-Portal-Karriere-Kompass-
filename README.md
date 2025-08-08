@@ -2,6 +2,67 @@
 
 This document outlines the conceptual and technical plan for building a Job Portal application using the Laravel framework.
 
+## Setup and Installation
+
+To run this application on your local machine, please follow these steps.
+
+**Prerequisites:**
+- PHP >= 8.2
+- Composer
+- A database server (e.g., MySQL, PostgreSQL)
+
+**Steps:**
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
+
+2.  **Install PHP dependencies:**
+    ```bash
+    composer install
+    ```
+
+3.  **Create your environment file:**
+    ```bash
+    cp .env.example .env
+    ```
+
+4.  **Generate an application key:**
+    ```bash
+    php artisan key:generate
+    ```
+
+5.  **Configure your database:**
+    Open the `.env` file and update the `DB_*` variables with your database credentials.
+    ```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=job_portal
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
+
+6.  **Run the database migrations:**
+    This will create all the necessary tables in your database.
+    ```bash
+    php artisan migrate
+    ```
+
+7.  **Create the storage link:**
+    This is necessary for the company logos to be publicly accessible.
+    ```bash
+    php artisan storage:link
+    ```
+
+8.  **Serve the application:**
+    ```bash
+    php artisan serve
+    ```
+    The application will now be running on `http://127.0.0.1:8000`.
+
 ## Task 1: Concept
 
 ### Sitemap
